@@ -181,4 +181,11 @@ prefect agent start --pool "default-agent-pool"
 
 <h3>Step 3: Create Python Pipeline that Uploads Data to Google BigQuery</h3>
 
-* In pipeline_to_bq, we actually don’t need to download the data from GCS to local, since we already wrote the files to local in pipeline_to_gcs. We will therefore load get the data from local. See [here] for pipeline that downloads data from GCS and upload to BQ.
+* Run the Python pipeline
+```ruby
+python3 pipeline_to_bq.py
+```
+
+* In pipeline_to_bq, we actually don’t need to download the data from GCS to local, since we already wrote the files to local in pipeline_to_gcs. We will therefore load get the data from local. See [here](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/blob/main/pipelines-to-gcs-bq/pipeline_gcs_to_bq.py) for pipeline that downloads data from GCS and upload to BQ.
+* Result: you will now see the files under the corresponding folder in BQ: 
+<img width="275" alt="Screenshot 2023-12-28 at 3 49 40 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/083380a3-c342-4fc5-836a-b63c5e319db8">
