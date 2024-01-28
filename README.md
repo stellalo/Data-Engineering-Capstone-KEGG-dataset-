@@ -2,14 +2,15 @@
 
 <h2>👩🏻‍💻 Database</h2>
 
-The selected database is part of a larger dataset used in an ongoing research at the [LaBella Lab](https://www.lablabella.com) at the University of North Carolina Charlotte (UNC Charlotte). The database we are using contains the output files from a machine learning (ML) model trained on genomic and environmental data of 1,154 strains from 1,049 fungal species in the subphylum Saccharomycotina. As this research is ongoing, I cannot share the data files until our results are published, the estimated publication date is July 2024. 
+The selected database is part of a larger dataset used in an ongoing research at the [LaBella Lab](https://www.lablabella.com) at the University of North Carolina Charlotte (UNC Charlotte). The database we are using contains the output files from a machine learning (ML) model trained on genomic and environmental data of 1,154 strains from 1,049 fungal species in the subphylum Saccharomycotina. As this research is ongoing, the data files used in this project will not be shared until the results are published. 
+
 <br />
 <br />
 <b><ins>The database has the following architecture:</ins></b>
 
 <img width="322" alt="Screenshot 2024-01-28 at 2 50 52 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/05fe5af9-f39b-4cf6-8a82-72730e0ba3d6">
 
-<b><ins>The KEGG data file has this data structure: </ins></b>
+<b><ins>The KEGG data file has the following data structure: </ins></b>
 * <b>Row</b>: each row contains a different yeast species
 * <b>Column</b>: each column contains a different KEGG
 <br />
