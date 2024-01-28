@@ -67,38 +67,16 @@ The ML model is built using the Random Forest algorithm, we set the training set
 <h2>🌓 Data Visualization</h2>
 
 * Top 25 KEGGs ranked by MeanDecreaseAccuracy:
-    * Temp_37:
-    
-    <img width="423" alt="Screenshot 2024-01-28 at 1 05 29 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/4a12b516-141b-4167-a34c-5896351512a1">
+<img width="880" alt="Screenshot 2024-01-28 at 4 33 14 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/cadf0c75-7f6a-458d-8ef0-bf1da3f1457e">
 
-    * X_FC_Resistance:
-    <img width="429" alt="Screenshot 2024-01-28 at 1 05 34 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/fb792d56-86d9-4454-b1d6-0927ca8e4905">
-
-    * Fluconazole_Resistance:
-    <img width="433" alt="Screenshot 2024-01-28 at 1 05 40 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/c92cecdd-14f4-437b-b8f5-f7c4367ce33e">
-
-    * O610_NaCl:
-    <img width="423" alt="Screenshot 2024-01-28 at 1 05 45 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/4acde7b6-d182-4443-98fd-0d2b324c0192">
 
 * Top 25 KEGGs ranked by MeanDecreaseGini:
-    * Temp_37:
-    <img width="434" alt="Screenshot 2024-01-28 at 1 05 50 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/749d3152-826e-4b46-90e7-c53803bdc266">
+<img width="895" alt="Screenshot 2024-01-28 at 4 33 23 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/8e2bc107-6249-4877-948d-2ddbd926f250">
 
-    * X_FC_Resistance:
-    <img width="422" alt="Screenshot 2024-01-28 at 1 06 01 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/d4edf6ff-1c11-4528-9630-f63b27808ca3">
-
-    * Fluconazole_Resistance:
-    <img width="422" alt="Screenshot 2024-01-28 at 1 06 09 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/052c5e66-8fdf-40b7-9878-4debcfccb99a">
-
-    * O610_NaCl:
-    <img width="416" alt="Screenshot 2024-01-28 at 1 06 18 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/1b16f9d3-127b-47a4-a270-c78862ec64c0">
 
 * Top 10 KEGGS of all 4 traits
-    * Sorted by MDA:
-    <img width="452" alt="Screenshot 2024-01-28 at 1 06 30 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/fb4218bc-2cec-4fac-9682-6492030fc8dd">
+<img width="897" alt="Screenshot 2024-01-28 at 4 33 30 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/c7e9e85c-e795-42b3-a135-f70454d1e445">
 
-    * Sorted by MDG: 
-    <img width="452" alt="Screenshot 2024-01-28 at 1 06 38 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/7c1560eb-3fc3-4902-8b73-630f1a685bfb">
 
 <h2>🌔 Steps to Reproduce</h2>
 <h3>Step 1: Use Terraform to create bucket in GCS, dataset & table in BigQuery.</h3>
