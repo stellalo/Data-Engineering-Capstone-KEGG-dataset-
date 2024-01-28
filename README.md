@@ -214,7 +214,9 @@ dbt build
 <img width="306" alt="Screenshot 2024-01-28 at 4 20 20 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/17b8e3c9-db75-4306-ac17-52876aeabd69">
 
 <h3>Step 5 (FINAL STEP!): Visualize data using Google Looker Studio</h3>
+
 * Create a report and load data from Google BQ.
+
 * Create the data dashboards:
 <img width="1328" alt="Screenshot 2024-01-28 at 4 23 08 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/e738a90c-b90f-4e4d-9d30-4c53923def6c">
 
