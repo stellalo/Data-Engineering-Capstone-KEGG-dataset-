@@ -9,8 +9,7 @@ The KEGG data file has this data structure:
 * Column: each column contains a different KEGG
 <br />
 The ML model is built using the Random Forest algorithm, we set the training set to be 90% of total data, and reselect the training/testing set and seed in each iteration, for a total of 100 iterations. There are, in total 3 different models, each using the same KEGG dataset and corresponding environmental data file. They differ in the following ways to find the optimal model with the highest accuracy:
-<br />
-<br />
+
 * copy_number —> Stored in each column is the number of copies the corresponding yeast species has of that kegg (0,1,2,3,…)
 * Expression —> Stored in each column is the codon expression level the corresponding yeast species has of that kegg .
 * P/A —> Stored in each column is the present (1) or absent (0) the corresponding yeast species has of that kegg.
