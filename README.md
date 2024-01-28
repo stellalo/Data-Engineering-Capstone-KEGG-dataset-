@@ -135,7 +135,12 @@ terraform apply
 <img width="451" alt="Screenshot 2023-12-24 at 1 56 47 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/e2616c67-0738-43dc-ad48-fc854a759287">
 <img width="526" alt="Screenshot 2023-12-24 at 1 56 57 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/85e878a2-1731-4b42-ac7d-e7fe354d0de1">
 
+* Result:
+	* Bucket in GCS named kegg_data_lake_kegg-data-analysis is created.
+	<img width="576" alt="Screenshot 2024-01-28 at 3 22 29 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/d0fd7ead-6141-43a9-9751-3a19fb805d9b">
 
+ 	* BQ dataset named kegg-dataset is created. Within this dataset, a table named kegg_data is created.
+	<img width="358" alt="Screenshot 2024-01-28 at 3 27 25 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/492c8ca0-b521-479b-863f-6d2498c500ac">
 
 
 
