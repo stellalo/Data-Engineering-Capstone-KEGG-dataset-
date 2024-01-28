@@ -101,7 +101,7 @@ The ML model is built using the Random Forest algorithm, we set the training set
     <img width="452" alt="Screenshot 2024-01-28 at 1 06 38 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/7c1560eb-3fc3-4902-8b73-630f1a685bfb">
 
 <h2>🌔 Steps to Reproduce</h2>
-Step 1: Use Terraform to create bucket in GCS, dataset & table in BigQuery.
+<h3>Step 1: Use Terraform to create bucket in GCS, dataset & table in BigQuery.</h3>
 
 * <b><ins>Set up GCP</ins></b>: After creating your GCP account, create or modify the following resources to enable Terraform to provision your infrastructure:
 	* A GCP Project: GCP organizes resources into projects. Create one in the GCP console and keep note of the project ID.
@@ -142,6 +142,39 @@ terraform apply
  	* BQ dataset named kegg-dataset is created. Within this dataset, a table named kegg_data is created.
 	<img width="358" alt="Screenshot 2024-01-28 at 3 27 25 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/492c8ca0-b521-479b-863f-6d2498c500ac">
 
+<h3>Step 2: Create Python Pipeline that Uploads Data to GCS.</h3>
+* Conda Setup
 
+```ruby
+conda create -n kegg python=3.9
+conda activate kegg
+```
 
+* Start Prefect server/UI
+```ruby
+prefect server start
+```
+* Run the pipeline via Prefect Deployement
+```ruby
+Prefect deployment build ./pipeline_to_gcs.py:parent_flow -n Parameterized_KEGG_Pipeline
+```
+This will produce a yaml file and build a deployment. Specify path to file and flow entry point, and give this deployment a name.
 
+```ruby
+prefect deployment apply parent_flow-deployment.yaml
+```
+* To apply the deployment we just created, run the above command. Note that we are specifying the yaml file next to apply. 
+Once the deployment is activated, go to Prefect’s UI and start a Quick/custom run. The deployment won’t run until you start an agent. 
+Because this deployment has no schedule or triggering automation, you will need to use the UI or API to create runs for it. 
+
+* Start prefect agent
+```ruby
+prefect agent start --pool "default-agent-pool"
+```
+
+******If you run it via deployment, you must give full path since it’s not running from your current directory (wherever that is). In addition, the agent probably doesn’t have permission to write to your local. So even if the execution was successful, the local files might not be written successfully to your local.******
+
+* Result:
+	* Data is written to local
+ 	* Data is written to GCS Bucket
+ 	<img width="564" alt="Screenshot 2024-01-28 at 3 50 41 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/280f9624-fb18-40eb-a0b3-843c8fa56885">
