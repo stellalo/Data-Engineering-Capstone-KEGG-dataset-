@@ -24,11 +24,35 @@ The ML model is built using the Random Forest algorithm, we set the training set
 * See [here](https://github.com/stellalo/random_forest_kegg) to learn more about the ML model.
 
 
-<h2>🪐 Language and Packages</h2>
+<h2>🪐 Problem Statement</h2>
 
-- <b>R Markdown</b>
+* What the most important KEGG, ranked by both MeanDecreaseAccuracy and MeanDecreaseGini, of the 4 different factors/traits used to build the model?
+* What are the top 10 KEGGs of the 4 different models, ranked by MeanDecreaseAccuracy and MeanDecreaseGini?
 
-The following packages are required to run the scripts: 
+<h2>🌒 Project Architecture & Technology Used</h2>
+<img width="892" alt="Screenshot 2024-01-28 at 12 54 34 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/dde4cd24-dd94-4c9d-a31c-8989864e3e82">
+
+<b><ins>IaC (Cloud Resources):</ins></b>
+* Terraform
+    * Link to code/folder
+Batch Data Ingestion & Workflow Orchestration
+* Prefect:8
+    * Data lake —> To GCS —> Link to first pipeline. 
+￼
+    * Data Warehouse —> To BQ —> Link to 2nd pipeline
+        * Parent Flow DAG:
+￼
+			to_bq DAG:
+￼
+    * *partition & cluster not used in this project. Explain!
+Data Transformation
+* Dbt
+    * Link to code/folder/repo
+￼
+Data Visualization
+* Data Looker Studio
+    * Link to dashboard?
+
 ```ruby
 library(reshape2)
 library(dplyr)
