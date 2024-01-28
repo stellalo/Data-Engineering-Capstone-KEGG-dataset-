@@ -189,3 +189,31 @@ python3 pipeline_to_bq.py
 * In pipeline_to_bq, we actually don’t need to download the data from GCS to local, since we already wrote the files to local in pipeline_to_gcs. We will therefore load get the data from local. See [here](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/blob/main/pipelines-to-gcs-bq/pipeline_gcs_to_bq.py) for pipeline that downloads data from GCS and upload to BQ.
 * Result: you will now see the files under the corresponding folder in BQ: 
 <img width="275" alt="Screenshot 2023-12-28 at 3 49 40 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/083380a3-c342-4fc5-836a-b63c5e319db8">
+
+<h3>Step 4: Transform data in BigQuery using dbt</h3>
+
+* Setting up dbt for using BigQuery
+* Clone the [dbt starter project](https://github.com/dbt-labs/dbt-starter-project)
+* In dbt Development, click <b><ins>Initialize your project</ins></b> and <b><ins>Commit</ins></b> to finish setting up your project. After committing, you'll be able to create a new branch in the IDE. Create a "dev" branch for development. The main branch will be read-only after project initialization.
+* Once all the dbt models are created, build the model.
+```ruby
+dbt build
+```
+* We are running "dbt build" instead of "dbt run" because the <b><ins>unique</ins></b> and <b><ins>not_null</ins></b> tests are added to MDAG_combined.sql file in Models/Core.
+* Example data transformation file:
+<img width="589" alt="Screenshot 2024-01-14 at 3 34 05 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/660fe8b0-aa7d-4345-b83c-cad808d182ec">
+<img width="507" alt="Screenshot 2024-01-14 at 3 33 59 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/0a777682-0c92-448c-9c72-1b7e57876540">
+
+* When you execute "dbt build", you are building a model that will transform your data without that data ever leaving your warehouse.
+* Result: Your transformed data will be in Google BigQuery:
+![Group 9](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/14e83d8b-48e5-40f2-9705-68b047daa8d9)
+
+***Not required but you can also set up deployement in dbt, this will store the resulted transformed data in your production dataset:
+<img width="306" alt="Screenshot 2024-01-28 at 4 20 20 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/17b8e3c9-db75-4306-ac17-52876aeabd69">
+
+<h3>Step 5 (FINAL STEP!): Visualize data using Google Looker Studio</h3>
+* Create a report and load data from Google BQ.
+* Create the data dashboards:
+<img width="1328" alt="Screenshot 2024-01-28 at 4 23 08 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/e738a90c-b90f-4e4d-9d30-4c53923def6c">
+
+All done :)
