@@ -94,6 +94,7 @@ The ML model is built using the Random Forest algorithm, we set the training set
     * Sorted by MDG: 
     <img width="452" alt="Screenshot 2024-01-28 at 1 06 38 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/7c1560eb-3fc3-4902-8b73-630f1a685bfb">
 
+<h2>🌔 Steps to Reproduce</h2>
 
 ```ruby
 library(reshape2)
