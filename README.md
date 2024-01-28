@@ -11,7 +11,7 @@ The selected database is part of a larger dataset used in an ongoing research at
 
 <b><ins>The KEGG data file has the following data structure: </ins></b>
 * <b>Row</b>: each row contains a different yeast species
-* <b>Column</b>: each column contains a different KEGG
+* <b>Column</b>: each column contains a different [KEGG](https://www.genome.jp/kegg/)
 <br />
 The ML model is built using the Random Forest algorithm, we set the training set to be 90% of total data, and reselect the training/testing set and seed in each iteration, for a total of 100 iterations. There are, in total 3 different models, each using the same KEGG dataset and corresponding environmental data file. They differ in the following ways to find the optimal model with the highest accuracy:
 
