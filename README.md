@@ -178,3 +178,7 @@ prefect agent start --pool "default-agent-pool"
 	* Data is written to local
  	* Data is written to GCS Bucket
  	<img width="564" alt="Screenshot 2024-01-28 at 3 50 41 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/280f9624-fb18-40eb-a0b3-843c8fa56885">
+
+<h3>Step 3: Create Python Pipeline that Uploads Data to Google BigQuery</h3>
+
+* In pipeline_to_bq, we actually don’t need to download the data from GCS to local, since we already wrote the files to local in pipeline_to_gcs. We will therefore load get the data from local. See [here] for pipeline that downloads data from GCS and upload to BQ.
