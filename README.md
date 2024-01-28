@@ -52,10 +52,14 @@ The ML model is built using the Random Forest algorithm, we set the training set
 
 <b><ins>Data Transformation:</ins></b>
 * [Dbt](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/tree/main/dbt)
+<img width="1109" alt="Screenshot 2024-01-14 at 3 21 41 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/27f3ccec-7e53-451d-84df-9c8752f4641c">
 
 
 <b><ins>Data Visualization:</ins></b>
 * Data Looker Studio
+
+<h2>🌓 Data Visualization</h2>
+
 
 ```ruby
 library(reshape2)
