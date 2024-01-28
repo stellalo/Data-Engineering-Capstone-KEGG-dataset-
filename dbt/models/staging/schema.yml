@@ -1,0 +1,94 @@
+version: 2
+
+sources:
+  - name: staging
+    database: kegg-data-analysis
+    schema: MeanDecreaseAccuracy
+
+    tables:
+      - name: E_Temp_37
+      - name: E_X_FC_Resistance
+      - name: E_Fluconazole_Resistan
+      - name: E_O610_NaCl
+      - name: PA_Temp_37
+      - name: PA_X_FC_Resistance
+      - name: PA_Fluconazole_Resistance
+      - name: PA_O610_NaCl
+      - name: CN_Temp_37
+      - name: CN_X_FC_Resistance
+      - name: CN_Fluconazole_Resistan
+      - name: CN_O610_NaCl
+
+  - name: staging_MDG
+    database: kegg-data-analysis
+    schema: MeanDecreaseGini
+
+    tables:
+      - name: E_Temp_37
+      - name: E_X_FC_Resistance
+      - name: E_Fluconazole_Resistan
+      - name: E_O610_NaCl
+      - name: PA_Temp_37
+      - name: PA_X_FC_Resistance
+      - name: PA_Fluconazole_Resistance
+      - name: PA_O610_NaCl
+      - name: CN_Temp_37
+      - name: CN_X_FC_Resistance
+      - name: CN_Fluconazole_Resistan
+      - name: CN_O610_NaCl
+
+models:
+    - name: MDA_Temp_37
+      columns:
+          - name: E_Mean
+            description: Mean MeanDecreaseAccuracy values of all 100 iterations of the Expression Model, 
+                         with growth at temperature 37 as factor. 
+          - name: PA_Mean
+            description: Mean MeanDecreaseAccuracy values of all 100 iterations of the Presence/Absence Model, 
+                         with growth at temperature 37 as factor.  
+          - name: CN_Mean
+            description: Mean MeanDecreaseAccuracy values of all 100 iterations of the Copy Number Model, 
+                         with growth at temperature 37 as factor. 
+          - name: AVEG
+            description: Average value of the above 3 columns (E_Mean, PA_Mean, CN_Mean)
+    - name: MDG_Temp_37
+      columns:
+          - name: E_Mean
+            description: Mean MeanDecreaseGini values of all 100 iterations of the Expression Model, 
+                         with growth at temperature 37 as factor. 
+          - name: PA_Mean
+            description: Mean MeanDecreaseGini values of all 100 iterations of the Presence/Absence Model, 
+                         with growth at temperature 37 as factor.  
+          - name: CN_Mean
+            description: Mean MeanDecreaseGini values of all 100 iterations of the Copy Number Model, 
+                         with growth at temperature 37 as factor. 
+          - name: AVEG
+            description: Average value of the above 3 columns (E_Mean, PA_Mean, CN_Mean)
+    - name: MDA_Combined
+      columns:
+          - name: KEGG
+            description: KEGGs that are present in all models
+          - name: Mean_temp
+            description: AVEG column from model MDA_Temp_37.
+          - name: Mean_XFC
+            description: AVEG column from model MDA_X_FC_Resistance.
+          - name: Mean_Fluconazole
+            description: AVEG column from model MDA_Fluconazole_Resistance.
+          - name: Mean_NaCl
+            description: AVEG column from model MDA_O610_NaCl.
+          - name: AVEG
+            description: Average value of the above 4 columns (Mean_temp,Mean_XFC,Mean_Fluconazole,Mean_NaCl)
+    - name: MDG_Combined
+      columns:
+          - name: KEGG
+            description: KEGGs that are present in all models
+          - name: Mean_temp
+            description: AVEG column from model MDG_Temp_37.
+          - name: Mean_XFC
+            description: AVEG column from model MDG_X_FC_Resistance.
+          - name: Mean_Fluconazole
+            description: AVEG column from model MDG_Fluconazole_Resistance.
+          - name: Mean_NaCl
+            description: AVEG column from model MDG_O610_NaCl.
+          - name: AVEG
+            description: Average value of the above 4 columns (Mean_temp,Mean_XFC,Mean_Fluconazole,Mean_NaCl)
