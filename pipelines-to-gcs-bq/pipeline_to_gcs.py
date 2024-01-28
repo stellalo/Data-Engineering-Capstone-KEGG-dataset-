@@ -26,7 +26,7 @@ def write_local(df_path:Path,cols:list[str],file_type:str) -> list[Path]:
         df.columns= [df.columns[0]] + cols + [df.columns[-1]]
         print(df.columns)
         parquet_path=f'data/{file_type}/{sheet}.parquet'
-        local_path=f'/Users/stella/Desktop/kegg-orchestration/data/{file_type}/{sheet}.parquet'
+        local_path=f'kegg-orchestration/data/{file_type}/{sheet}.parquet'
         paths.append(parquet_path)
         df.to_parquet(local_path, compression="gzip")
     return paths
@@ -45,7 +45,7 @@ def write_gcs(paths:list[Path]) -> None:
 @flow()
 def etl_web_to_gcs(type:str) -> None:
     """The Main ETL Function"""
-    data_path=f"/Users/stella/Desktop/kegg-orchestration/{type}.xlsx"
+    data_path=f"kegg-orchestration/{type}.xlsx"
     cols=col_names()
     paths=write_local(data_path,cols,type)
     write_gcs(paths)
