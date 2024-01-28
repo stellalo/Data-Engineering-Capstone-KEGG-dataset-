@@ -30,7 +30,7 @@ def get_files(folder_path):
 #     """Download trip data from gcs"""
 #     #load an instance of a class named GcsBucket 
 #     gcs_block = GcsBucket.load("kegg-gcs")
-#     local_path=f"/Users/stella/Desktop/kegg-orchestration/{gcs_path}.parquet"
+#     local_path=f"kegg-orchestration/{gcs_path}.parquet"
 #     #write file to local
 #     gcs_block.get_directory(from_path=gcs_path, local_path=local_path)
 #     return local_path
@@ -71,7 +71,7 @@ def to_bq(files:list[str],folder_path:str,type:str):
 @flow()
 def parent_flow(file_type:list[str]):
     for type in file_type:
-        folder_path= f'/Users/stella/Desktop/kegg-orchestration/data/{type}'
+        folder_path= f'kegg-orchestration/data/{type}'
         #files = get_files(bucket, folder)
         files = get_files(folder_path)
         to_bq(files,folder_path,type)
