@@ -33,16 +33,19 @@ The ML model is built using the Random Forest algorithm, we set the training set
 <img width="892" alt="Screenshot 2024-01-28 at 12 54 34 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/dde4cd24-dd94-4c9d-a31c-8989864e3e82">
 
 <b><ins>IaC (Cloud Resources):</ins></b>
-* Terraform
-    * Link to code/folder
-Batch Data Ingestion & Workflow Orchestration
-* Prefect:8
-    * Data lake —> To GCS —> Link to first pipeline. 
-￼
-    * Data Warehouse —> To BQ —> Link to 2nd pipeline
-        * Parent Flow DAG:
-￼
-			to_bq DAG:
+* [Terraform](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/tree/main/terraform)
+* Batch Data Ingestion & Workflow Orchestration
+	* Prefect:
+ 		* [Pipeline to Google Cloud Storage](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/blob/main/pipelines-to-gcs-bq/pipeline_to_gcs.py)
+ <img width="520" alt="Screenshot 2023-12-27 at 3 00 21 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/0d68054d-5bba-4d18-b68e-85bde7c9c398">
+
+   		* [Pipeline to BigQuery](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/blob/main/pipelines-to-gcs-bq/pipeline_to_bq.py)
+     			* Parent Flow DAG:
+￼<img width="1237" alt="Screenshot 2023-12-28 at 3 49 58 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/8a471bfd-9c1c-4ab1-8457-a627960cdee2">
+
+			* Child Flow DAG: 
+<img width="737" alt="Screenshot 2023-12-28 at 3 50 35 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/fd79705a-7acd-46a7-b87a-52204cc9c4af">
+DAG:
 ￼
     * *partition & cluster not used in this project. Explain!
 Data Transformation
