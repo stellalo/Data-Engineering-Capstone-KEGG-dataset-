@@ -34,28 +34,28 @@ The ML model is built using the Random Forest algorithm, we set the training set
 
 <b><ins>IaC (Cloud Resources):</ins></b>
 * [Terraform](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/tree/main/terraform)
-* Batch Data Ingestion & Workflow Orchestration
-	* Prefect:
- 		* [Pipeline to Google Cloud Storage](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/blob/main/pipelines-to-gcs-bq/pipeline_to_gcs.py)
- 		<img width="520" alt="Screenshot 2023-12-27 at 3 00 21 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/0d68054d-5bba-4d18-b68e-85bde7c9c398">
+<b><ins>Batch Data Ingestion & Workflow Orchestration:</ins></b>
+* Prefect:
+ 	* [Pipeline to Google Cloud Storage](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/blob/main/pipelines-to-gcs-bq/pipeline_to_gcs.py)
+ 	<img width="520" alt="Screenshot 2023-12-27 at 3 00 21 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/0d68054d-5bba-4d18-b68e-85bde7c9c398">
 
 
-		* [Pipeline to BigQuery](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/blob/main/pipelines-to-gcs-bq/pipeline_to_bq.py)
-			* Parent Flow DAG:
-			￼<img width="1237" alt="Screenshot 2023-12-28 at 3 49 58 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/8a471bfd-9c1c-4ab1-8457-a627960cdee2">
+	* [Pipeline to BigQuery](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/blob/main/pipelines-to-gcs-bq/pipeline_to_bq.py)
+	* Parent Flow DAG:
+	￼<img width="1237" alt="Screenshot 2023-12-28 at 3 49 58 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/8a471bfd-9c1c-4ab1-8457-a627960cdee2">
 
-			* Child Flow DAG: 
-			<img width="737" alt="Screenshot 2023-12-28 at 3 50 35 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/fd79705a-7acd-46a7-b87a-52204cc9c4af">
-DAG:
+	* Child Flow DAG: 
+	<img width="737" alt="Screenshot 2023-12-28 at 3 50 35 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/fd79705a-7acd-46a7-b87a-52204cc9c4af">
 ￼
-    * *partition & cluster not used in this project. Explain!
-Data Transformation
-* Dbt
-    * Link to code/folder/repo
-￼
-Data Visualization
+* Partition & cluster.
+ 	*We will not be using Partitions nor clustering in this project. All our data files are significantly less than 1GB, using partitions/clusters actually incur more metadata reads & maintenance. In addition, the data won’t work well with partitions and clustering. The columns are: KEGG, iteration 1,,,, iteration 100, Mean, whereas the rows are distinctive KEGGs.
+
+<b><ins>Data Transformation:</ins></b>
+* [Dbt](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/tree/main/dbt)
+
+
+<b><ins>Data Visualization:</ins></b>
 * Data Looker Studio
-    * Link to dashboard?
 
 ```ruby
 library(reshape2)
