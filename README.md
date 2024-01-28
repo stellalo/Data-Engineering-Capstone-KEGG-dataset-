@@ -103,15 +103,40 @@ The ML model is built using the Random Forest algorithm, we set the training set
 <h2>🌔 Steps to Reproduce</h2>
 Step 1: Use Terraform to create bucket in GCS, dataset & table in BigQuery.
 
-* <b>Set up GCP</b>: After creating your GCP account, create or modify the following resources to enable Terraform to provision your infrastructure:
+* <b><ins>Set up GCP</ins></b>: After creating your GCP account, create or modify the following resources to enable Terraform to provision your infrastructure:
 	* A GCP Project: GCP organizes resources into projects. Create one in the GCP console and keep note of the project ID.
  	* Google Compute Engine: enable google compute engine for your project in the GCP console.
   	* A GCP service account key: create a service account key to enable Terraform to access your GCP account. Add the following roles in addition to Viewer: <b>Storage Admin + Storage Object Admin + BigQuery Admin</b>
 <img width="555" alt="Screenshot 2023-12-24 at 9 15 02 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/fdd039f0-3aa0-4d81-a2d7-f96025eda443">
 
-* <b>Terraform Configuration<b>: Each Terraform configuration must be in its own working directory. Create a working directory for your configuration and cd into it.
+* <b><ins>Terraform Configuration</ins></b>: Each Terraform configuration must be in its own working directory. Create a working directory for your configuration and cd into it.
 
 ```ruby
 mkdir kegg-terraform
 cd kegg-terraform
 ```
+
+* Create a <b><ins>main.tf</ins></b> and <b><ins>variables.tf</ins></b> for your Terraform configuration:
+```ruby
+touch main.tf
+touch variables.tf
+```
+
+* Initialize Terraform statefile
+```ruby
+terraform init
+```
+
+* Create Cloud Infrastructure
+```ruby
+terraform apply
+```
+
+<img width="451" alt="Screenshot 2023-12-24 at 1 56 47 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/e2616c67-0738-43dc-ad48-fc854a759287">
+<img width="526" alt="Screenshot 2023-12-24 at 1 56 57 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/85e878a2-1731-4b42-ac7d-e7fe354d0de1">
+
+
+
+
+
+
