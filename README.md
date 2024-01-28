@@ -206,9 +206,11 @@ dbt build
 
 * When you execute "dbt build", you are building a model that will transform your data without that data ever leaving your warehouse.
 * Result: Your transformed data will be in Google BigQuery:
+
 ![Group 9](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/14e83d8b-48e5-40f2-9705-68b047daa8d9)
 
 ***Not required but you can also set up deployement in dbt, this will store the resulted transformed data in your production dataset:
+
 <img width="306" alt="Screenshot 2024-01-28 at 4 20 20 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/17b8e3c9-db75-4306-ac17-52876aeabd69">
 
 <h3>Step 5 (FINAL STEP!): Visualize data using Google Looker Studio</h3>
