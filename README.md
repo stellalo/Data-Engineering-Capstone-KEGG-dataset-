@@ -8,7 +8,8 @@ The selected database is part of a larger dataset used in an ongoing research at
 <b><ins>The database has the following architecture:</ins></b>
 
 
-![de_architecture](https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/89127fd6-ecc9-49f7-82bf-7ca4b316cd4a)
+<img width="1260" alt="Screenshot 2024-04-15 at 10 21 10 AM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/63929c76-3e06-4f56-9a9d-5737520021b1">
+
 
 
 <b><ins>The KEGG data file has the following data structure: </ins></b>
