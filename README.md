@@ -7,7 +7,8 @@ The selected database is part of a larger dataset used in an ongoing research at
 <br />
 <b><ins>The database has the following architecture:</ins></b>
 
-<img width="322" alt="Screenshot 2024-01-28 at 2 50 52 PM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/05fe5af9-f39b-4cf6-8a82-72730e0ba3d6">
+<img width="538" alt="Screenshot 2024-04-15 at 10 18 03 AM" src="https://github.com/stellalo/Data-Engineering-Capstone-KEGG-dataset-/assets/89308696/3037267b-4faf-4638-83b9-c067a059676b">
+
 
 <b><ins>The KEGG data file has the following data structure: </ins></b>
 * <b>Row</b>: each row contains a different yeast species
